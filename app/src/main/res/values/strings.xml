@@ -18,5 +18,6 @@
     <string name="by_signing_up_you_agree_to_the" />
     <string name="privacy_policy_terms_conditions" />
     <string name="submit">Register</string>
+    <string name="scan">Scan Fingerprint</string>
 
 </resources>

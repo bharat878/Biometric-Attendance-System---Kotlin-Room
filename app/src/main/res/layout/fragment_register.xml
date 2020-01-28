@@ -8,7 +8,7 @@
 
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/city"
+        android:id="@+id/employeeCode"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/pinCode"
+        android:id="@+id/employeeName"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -41,11 +41,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/city" />
+        app:layout_constraintTop_toBottomOf="@+id/employeeCode" />
 
     <androidx.appcompat.widget.AppCompatTextView
 
-        android:id="@+id/profession"
+        android:id="@+id/employeeDob"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -61,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pinCode" />
+        app:layout_constraintTop_toBottomOf="@+id/employeeName" />
 
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -79,10 +79,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profession" />
+        app:layout_constraintTop_toBottomOf="@+id/employeeDob" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/signupNumber"
+        android:id="@+id/signupPassword"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -114,20 +114,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/signupPassword" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/confirmPassword"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/scanFingerPrint"
+        android:layout_width="162dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/signup"
-        android:inputType="textPassword"
+        android:hint="@string/scan"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/createPassword" />
 
@@ -143,7 +141,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirmPassword"
+        app:layout_constraintTop_toBottomOf="@+id/scanFingerPrint"
         app:layout_constraintVertical_bias="0.123" />
 
     <ProgressBar
