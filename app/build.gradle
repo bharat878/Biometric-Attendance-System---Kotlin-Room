@@ -44,9 +44,10 @@ dependencies {
 
     //Room Database
     implementation "androidx.room:room-runtime:2.2.3"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
-
+    kapt "androidx.room:room-compiler:$room_version"
     implementation 'androidx.biometric:biometric:1.0.0-alpha04'
 
+    //stetho library for debugging problem
+    implementation 'com.facebook.stetho:stetho:1.5.1'
 
 }

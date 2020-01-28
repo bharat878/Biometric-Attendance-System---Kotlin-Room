@@ -1,12 +1,10 @@
 package bharat.group.attendancesystem.room.dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import bharat.group.attendancesystem.room.entity.Employee
 
+@Dao
 interface EmployeeDao {
 
     @Insert
