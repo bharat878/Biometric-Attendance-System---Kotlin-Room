@@ -2,14 +2,17 @@ package bharat.group.attendancesystem.ui.auth
 
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.provider.ContactsContract.CommonDataKinds.Organization.TITLE
 import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
+import androidx.biometric.BiometricPrompt
 
 import bharat.group.attendancesystem.R
+import bharat.group.attendancesystem.extension.showToast
 import bharat.group.attendancesystem.room.DBHelper
 import bharat.group.attendancesystem.room.DBHelperI
 import bharat.group.attendancesystem.room.database.EmployeeDatabase
@@ -18,12 +21,16 @@ import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.fragment_register.view.*
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.concurrent.Executors
 
 class RegisterFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
     lateinit var mView: View
     val c = Calendar.getInstance()
     lateinit var dbHelperI: DBHelperI
+
+    private lateinit var biometricPrompt : BiometricPrompt
+    private lateinit var promptInfo : BiometricPrompt.PromptInfo
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,9 +40,44 @@ class RegisterFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         mView = inflater.inflate(R.layout.fragment_register, container, false)
 
         init()
+        initBiometricPrompt()
         onClick()
 
         return mView
+    }
+
+    private fun initBiometricPrompt() {
+        val executor = Executors.newSingleThreadExecutor()
+
+        biometricPrompt = BiometricPrompt(requireActivity(),
+            executor,
+            object : BiometricPrompt.AuthenticationCallback() {
+                override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                    super.onAuthenticationError(errorCode, errString)
+                    if (errorCode == BiometricPrompt.ERROR_NEGATIVE_BUTTON){
+                        activity!!.runOnUiThread {context!!.showToast("$errString button clicked by user")  }
+                    }
+                }
+
+                override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                    super.onAuthenticationSucceeded(result)
+                    activity!!.runOnUiThread {context!!.showToast("Authentication Successful")  }
+
+                }
+
+                override fun onAuthenticationFailed() {
+                    super.onAuthenticationFailed()
+                    activity!!.runOnUiThread {context!!.showToast("Authentication Failed")  }
+
+                }
+            })
+
+        promptInfo = BiometricPrompt.PromptInfo.Builder()
+            .setTitle(TITLE)
+            .setSubtitle(SUBTITLE)
+            .setDescription(DISCRIPTION)
+            .setNegativeButtonText(CANCEL)
+            .build()
     }
 
     private fun init() {
@@ -47,9 +89,27 @@ class RegisterFragment : Fragment(), DatePickerDialog.OnDateSetListener {
             datePicker()
         }
 
+        mView.scanFingerPrint.setOnClickListener {
+            if (checkFingerPrintSetting()){
+                showBiometricPrompts()
+            }else{
+                context!!.showToast("This feature is not available on your device")
+            }
+        }
+
         mView.submit.setOnClickListener {
             getDetails()
         }
+    }
+
+    private fun checkFingerPrintSetting(): Boolean {
+        return BiomatricUtils.isHardwareSupported(context!!)
+                && BiomatricUtils.isSdkVersionSupported()
+                && BiomatricUtils.isFingerprintAvailable(context!!)
+    }
+
+    private fun showBiometricPrompts() {
+        biometricPrompt.authenticate(promptInfo)
     }
 
     private fun getDetails() {
@@ -133,8 +193,13 @@ class RegisterFragment : Fragment(), DatePickerDialog.OnDateSetListener {
     }
 
     private fun saveToDatabase(employeeData: Employee) {
-
-
         dbHelperI.insertEmployeeDetails(employeeData, context)
+    }
+
+    companion object{
+        private const val TITLE : String = "Authenticate Finger"
+        private const val SUBTITLE : String = ""
+        private const val DISCRIPTION : String = ""
+        private const val CANCEL : String = "Cancel"
     }
 }
