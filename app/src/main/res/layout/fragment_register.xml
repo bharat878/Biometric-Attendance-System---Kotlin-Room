@@ -7,7 +7,7 @@
     tools:context=".ui.auth.RegisterFragment">
 
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/employeeCode"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -34,7 +34,7 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/signup"
         android:hint="@string/name"
-        android:inputType="number"
+        android:inputType="text"
         android:textColor="#000000"
         android:textSize="20sp"
         android:paddingLeft="8dp"
@@ -65,7 +65,7 @@
 
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/signupEmail"
+        android:id="@+id/employeeEmail"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -82,7 +82,7 @@
         app:layout_constraintTop_toBottomOf="@+id/employeeDob" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/signupPassword"
+        android:id="@+id/employeePassword"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -90,17 +90,17 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/signup"
         android:hint="@string/password"
-        android:inputType="number"
+        android:inputType="textPassword"
         android:textColor="#000000"
         android:textSize="20sp"
         android:paddingLeft="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/employeeEmail" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/createPassword"
+        android:id="@+id/employeePhoneNo"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="16dp"
@@ -108,13 +108,13 @@
         android:layout_marginRight="16dp"
         android:background="@drawable/signup"
         android:hint="@string/phone_no"
-        android:inputType="textPassword"
+        android:inputType="number"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/employeePassword" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/scanFingerPrint"
@@ -127,7 +127,7 @@
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/employeePhoneNo" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/submit"

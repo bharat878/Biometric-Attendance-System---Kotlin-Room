@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         val employeeDetails = Employee(employee_code = "102", employee_name = "bharat", employee_email = "bharat@gmail.com", employee_dob = "26jan",
             employee_password = "123456", employee_phoneNo = "98765444")
 
-        EmployeeDatabase.getInstance(this)?.getEmployeeDao()?.insert(employeeDetails)
+//        EmployeeDatabase.getInstance(this)?.getEmployeeDao()?.insert(employeeDetails)
 
         val loginFragment:LoginFragment = LoginFragment()
         val fragmentManager:FragmentManager = supportFragmentManager

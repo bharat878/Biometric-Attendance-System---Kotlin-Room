@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase
 import bharat.group.attendancesystem.room.dao.EmployeeDao
 import bharat.group.attendancesystem.room.entity.Employee
 
-@Database(entities = [Employee::class], version = 1, exportSchema = false)
+@Database(entities = [Employee::class], version = 2, exportSchema = false)
 abstract class EmployeeDatabase: RoomDatabase() {
 
     abstract fun getEmployeeDao():EmployeeDao
