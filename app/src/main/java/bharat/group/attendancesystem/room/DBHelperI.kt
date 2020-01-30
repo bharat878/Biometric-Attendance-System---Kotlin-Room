@@ -14,4 +14,9 @@ interface DBHelperI {
         context: Context?,
         employeeData: String
     ):String
+
+    fun selectEmployeeFingerprint(
+        context: Context?,
+        empCode:String
+    ):Boolean
 }

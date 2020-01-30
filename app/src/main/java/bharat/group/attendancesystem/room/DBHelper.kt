@@ -19,4 +19,9 @@ class DBHelper(var employeeDatabse:EmployeeDatabase):DBHelperI {
          val credentials:String = EmployeeDatabase.getInstance(context!!)?.getEmployeeDao()!!.selectCredentials(employeeData)
         return credentials
     }
+
+    override fun selectEmployeeFingerprint(context: Context?, empCode: String): Boolean {
+        val fingerprint: Boolean = EmployeeDatabase.getInstance(context!!)?.getEmployeeDao()!!.selectFingerPrintValue(empCode)
+        return fingerprint
+    }
 }

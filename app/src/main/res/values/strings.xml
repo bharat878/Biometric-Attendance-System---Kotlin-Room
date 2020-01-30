@@ -19,5 +19,6 @@
     <string name="privacy_policy_terms_conditions" />
     <string name="submit">Register</string>
     <string name="scan">Scan Fingerprint</string>
+    <string name="saved_high_score_default_key">000</string>
 
 </resources>

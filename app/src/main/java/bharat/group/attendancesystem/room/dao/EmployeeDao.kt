@@ -16,6 +16,9 @@ interface EmployeeDao {
     @Delete
     fun delete(employee: Employee)
 
+    @Query("SELECT fingerprint_scan FROM attendance_table where employee_code = :empCode")
+    fun selectFingerPrintValue(empCode:String):Boolean
+
     @Query("SELECT employee_password FROM attendance_table Where employee_code = :employee")
     fun selectCredentials(employee: String):String
 

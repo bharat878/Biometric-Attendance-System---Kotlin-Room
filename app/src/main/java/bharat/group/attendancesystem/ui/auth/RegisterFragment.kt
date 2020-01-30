@@ -1,6 +1,7 @@
 package bharat.group.attendancesystem.ui.auth
 
 import android.app.DatePickerDialog
+import android.content.Context
 import android.os.Bundle
 import android.util.Patterns
 import androidx.fragment.app.Fragment
@@ -195,6 +196,13 @@ class RegisterFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
     private fun saveToDatabase(employeeData: Employee) {
         dbHelperI.insertEmployeeDetails(employeeData, context)
+
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+        with (sharedPref.edit()) {
+            putString(getString(R.string.employee_code), employeeData.employee_code)
+            commit()
+        }
+
     }
 
     companion object{
