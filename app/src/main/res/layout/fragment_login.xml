@@ -7,12 +7,12 @@
     tools:context=".ui.auth.LoginFragment">
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/loginEmail"
+        android:id="@+id/loginEmployeeCode"
         android:layout_width="349dp"
         android:layout_height="46dp"
         android:layout_marginTop="124dp"
         android:background="@drawable/text_bg"
-        android:hint="@string/email"
+        android:hint="@string/employee_code"
         android:paddingLeft="10dp"
         android:stateListAnimator="@null"
         android:textStyle="bold"
@@ -33,7 +33,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/loginEmployeeCode" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLogin"

@@ -9,21 +9,14 @@ class DBHelper(var employeeDatabse:EmployeeDatabase):DBHelperI {
         employeeData: Employee,
         context: Context?
     ) {
-
-       // employeeDatabse.getEmployeeDao().insert(employeeData)
-
         EmployeeDatabase.getInstance(context!!)?.getEmployeeDao()?.insert(employeeData)
     }
-/*
-    override fun insertEmployeeDetails(
-        employeeCode: String,
-        employeeName: String,
-        employeEmail: String,
-        employeePassword: String,
-        employeeDob: String,
-        employeePhoneNo: String
-    ) {
 
-
-    }*/
+    override fun selectEmployeePassword(
+        context: Context?,
+        employeeData: String
+    ):String {
+         val credentials:String = EmployeeDatabase.getInstance(context!!)?.getEmployeeDao()!!.selectCredentials(employeeData)
+        return credentials
+    }
 }

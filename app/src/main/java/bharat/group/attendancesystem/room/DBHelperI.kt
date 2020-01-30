@@ -9,13 +9,9 @@ interface DBHelperI {
         employeeData: Employee,
         context: Context?
     )
-/*
-    fun insertEmployeeDetails(
-        employeeCode:String,
-        employeeName:String,
-        employeEmail:String,
-        employeePassword:String,
-        employeeDob:String,
-        employeePhoneNo:String
-    )*/
+
+    fun selectEmployeePassword(
+        context: Context?,
+        employeeData: String
+    ):String
 }

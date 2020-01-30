@@ -2,7 +2,6 @@ package bharat.group.attendancesystem.ui.auth
 
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Organization.TITLE
 import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -28,6 +27,7 @@ class RegisterFragment : Fragment(), DatePickerDialog.OnDateSetListener {
     lateinit var mView: View
     val c = Calendar.getInstance()
     lateinit var dbHelperI: DBHelperI
+    var fingerprint:Boolean = false
 
     private lateinit var biometricPrompt : BiometricPrompt
     private lateinit var promptInfo : BiometricPrompt.PromptInfo
@@ -62,7 +62,7 @@ class RegisterFragment : Fragment(), DatePickerDialog.OnDateSetListener {
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                     super.onAuthenticationSucceeded(result)
                     activity!!.runOnUiThread {context!!.showToast("Authentication Successful")  }
-
+                    fingerprint = true
                 }
 
                 override fun onAuthenticationFailed() {
@@ -119,7 +119,8 @@ class RegisterFragment : Fragment(), DatePickerDialog.OnDateSetListener {
             employee_dob = mView.employeeDob.text.toString(),
             employee_email = mView.employeeEmail.text.toString(),
             employee_password = mView.employeePassword.text.toString(),
-            employee_phoneNo = mView.employeePhoneNo.text.toString()
+            employee_phoneNo = mView.employeePhoneNo.text.toString(),
+            employee_fingerprintScan = fingerprint
         )
         checkValidation(employeeData)
     }

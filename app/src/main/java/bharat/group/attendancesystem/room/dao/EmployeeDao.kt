@@ -16,7 +16,9 @@ interface EmployeeDao {
     @Delete
     fun delete(employee: Employee)
 
+    @Query("SELECT employee_password FROM attendance_table Where employee_code = :employee")
+    fun selectCredentials(employee: String):String
 
     @Query("SELECT * FROM attendance_table ORDER BY employee_code DESC")
-    fun getAllEmployees(): LiveData<List<Employee>>
+    fun getAllEmployees(): List<Employee>
 }

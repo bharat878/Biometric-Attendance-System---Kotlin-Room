@@ -29,10 +29,9 @@ data class Employee (
     var employee_password:String = "",
 
     @ColumnInfo(name = "employee_phoneNo")
-    var employee_phoneNo:String = ""
+    var employee_phoneNo:String = "",
+
+    @ColumnInfo(name = "fingerprint_scan")
+    var employee_fingerprintScan:Boolean = false
 
 )
-//
-//    constructor():this
-//        (employee_code = "", employee_name = "", employee_email = "", employee_password = "",
-//        employee_dob = "", employee_phoneNo = "")

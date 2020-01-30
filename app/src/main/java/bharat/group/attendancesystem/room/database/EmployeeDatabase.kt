@@ -26,7 +26,7 @@ abstract class EmployeeDatabase: RoomDatabase() {
                     INSTANCE = Room
                         .databaseBuilder(context.applicationContext,
                             EmployeeDatabase::class.java,
-                            DATABASE_NAME)
+                            DATABASE_NAME).addMigrations().fallbackToDestructiveMigration()
                         .allowMainThreadQueries()
                         .build()
 
