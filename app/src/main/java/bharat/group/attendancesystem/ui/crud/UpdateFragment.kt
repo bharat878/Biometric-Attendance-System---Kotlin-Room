@@ -18,6 +18,7 @@ import bharat.group.attendancesystem.room.DBHelperI
 import bharat.group.attendancesystem.room.database.EmployeeDatabase
 import bharat.group.attendancesystem.room.entity.Employee
 import kotlinx.android.synthetic.main.fragment_register.*
+import kotlinx.android.synthetic.main.fragment_update.*
 import kotlinx.android.synthetic.main.fragment_update.view.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -94,7 +95,7 @@ class UpdateFragment : Fragment(), DatePickerDialog.OnDateSetListener  {
 
         val myFormat = "dd.MM.yyyy" // mention the format you need
         val sdf = SimpleDateFormat(myFormat, Locale.US)
-        employeeDob.text = sdf.format(c.time)
+        updateEmployeeDob.text = sdf.format(c.time)
     }
     private fun getDetails() {
 

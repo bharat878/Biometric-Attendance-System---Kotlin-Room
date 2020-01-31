@@ -9,7 +9,7 @@ import bharat.group.attendancesystem.room.dao.EmployeeDao
 import bharat.group.attendancesystem.room.entity.Employee
 import bharat.group.attendancesystem.room.entity.EmployeeAttendance
 
-@Database(entities = [Employee::class, EmployeeAttendance::class], version = 2, exportSchema = false)
+@Database(entities = [Employee::class, EmployeeAttendance::class], version = 3, exportSchema = false)
 abstract class EmployeeDatabase: RoomDatabase() {
 
     abstract fun getEmployeeDao():EmployeeDao

@@ -3,12 +3,16 @@ package bharat.group.attendancesystem.room.dao
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import bharat.group.attendancesystem.room.entity.Employee
+import bharat.group.attendancesystem.room.entity.EmployeeAttendance
 
 @Dao
 interface EmployeeDao {
 
     @Insert
     fun insert(employee: Employee)
+
+    @Insert
+    fun insertAttendance(employeeAttendance: EmployeeAttendance)
 
     @Update
     fun update(employee: Employee)
@@ -27,4 +31,5 @@ interface EmployeeDao {
 
     @Query("SELECT * FROM attendance_table ORDER BY employee_code DESC")
     fun getAllEmployees(): List<Employee>
+
 }

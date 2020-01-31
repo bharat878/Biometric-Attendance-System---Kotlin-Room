@@ -3,6 +3,7 @@ package bharat.group.attendancesystem.room
 import android.content.Context
 import bharat.group.attendancesystem.room.database.EmployeeDatabase
 import bharat.group.attendancesystem.room.entity.Employee
+import bharat.group.attendancesystem.room.entity.EmployeeAttendance
 
 class DBHelper(var employeeDatabse:EmployeeDatabase):DBHelperI {
     override fun insertEmployeeDetails(
@@ -35,5 +36,13 @@ class DBHelper(var employeeDatabse:EmployeeDatabase):DBHelperI {
         context: Context?
     ) {
         EmployeeDatabase.getInstance(context!!)?.getEmployeeDao()!!.update(employeeData)
+    }
+
+    override fun insertEmployeeAttendance(
+        employeeAttendance: EmployeeAttendance,
+        context: Context?
+    ) {
+        EmployeeDatabase.getInstance(context!!)?.getEmployeeDao()?.insertAttendance(employeeAttendance)
+
     }
 }

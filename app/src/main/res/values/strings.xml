@@ -26,5 +26,6 @@
     <string name="delete_attendance">Delete Attendance</string>
     <string name="date">Date</string>
     <string name="attendance">Attendance</string>
+    <string name="downloadData">Download Data</string>
 
 </resources>

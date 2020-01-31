@@ -2,6 +2,7 @@ package bharat.group.attendancesystem.room
 
 import android.content.Context
 import bharat.group.attendancesystem.room.entity.Employee
+import bharat.group.attendancesystem.room.entity.EmployeeAttendance
 
 interface DBHelperI {
 
@@ -26,4 +27,6 @@ interface DBHelperI {
         employeeData: Employee,
         context: Context?
     )
+
+    fun insertEmployeeAttendance(employeeAttendance: EmployeeAttendance, context: Context?)
 }
