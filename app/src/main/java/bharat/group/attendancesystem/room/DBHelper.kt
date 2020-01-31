@@ -45,4 +45,13 @@ class DBHelper(var employeeDatabse:EmployeeDatabase):DBHelperI {
         EmployeeDatabase.getInstance(context!!)?.getEmployeeDao()?.insertAttendance(employeeAttendance)
 
     }
+
+    override fun selectEmployeeAttendance(
+        context: Context?
+    ): List<EmployeeAttendance> {
+
+        val attendance:List<EmployeeAttendance> = EmployeeDatabase.getInstance(context!!)?.getEmployeeDao()!!.getAllEmployees()
+        return attendance
+    }
+
 }

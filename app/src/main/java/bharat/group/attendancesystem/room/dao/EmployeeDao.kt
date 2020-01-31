@@ -29,7 +29,7 @@ interface EmployeeDao {
     @Query("SELECT * FROM attendance_table WHERE employee_code = :empCode")
     fun selectRow(empCode: String):Employee
 
-    @Query("SELECT * FROM attendance_table ORDER BY employee_code DESC")
-    fun getAllEmployees(): List<Employee>
+    @Query("SELECT * FROM EmployeeAttendance_table")
+    fun getAllEmployees(): List<EmployeeAttendance>
 
 }

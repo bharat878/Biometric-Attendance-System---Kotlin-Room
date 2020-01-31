@@ -47,10 +47,10 @@ class CrudFragment : Fragment() {
         }
 
         mView.downloadData.setOnClickListener {
-            val addAttendanceFragment = AddAttendanceFragment()
+            val downloadFragment = DownloadFragment()
             val fragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.crud_container, addAttendanceFragment)
+            fragmentTransaction.replace(R.id.crud_container, downloadFragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
