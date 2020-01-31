@@ -197,7 +197,7 @@ class RegisterFragment : Fragment(), DatePickerDialog.OnDateSetListener {
     private fun saveToDatabase(employeeData: Employee) {
         dbHelperI.insertEmployeeDetails(employeeData, context)
 
-        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+        val sharedPref = activity?.getSharedPreferences("AttendanceSystem",Context.MODE_PRIVATE) ?: return
         with (sharedPref.edit()) {
             putString(getString(R.string.employee_code), employeeData.employee_code)
             commit()

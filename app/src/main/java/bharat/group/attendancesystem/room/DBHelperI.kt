@@ -19,4 +19,11 @@ interface DBHelperI {
         context: Context?,
         empCode:String
     ):Boolean
+
+    fun selectEmployeeDetails(context: Context?, empCode: String):Employee
+
+    fun updateDetails(
+        employeeData: Employee,
+        context: Context?
+    )
 }

@@ -24,4 +24,16 @@ class DBHelper(var employeeDatabse:EmployeeDatabase):DBHelperI {
         val fingerprint: Boolean = EmployeeDatabase.getInstance(context!!)?.getEmployeeDao()!!.selectFingerPrintValue(empCode)
         return fingerprint
     }
+
+    override fun selectEmployeeDetails(context: Context?, empCode: String): Employee {
+        val employee:Employee = EmployeeDatabase.getInstance(context!!)?.getEmployeeDao()!!.selectRow(empCode)
+        return employee
+    }
+
+    override fun updateDetails(
+        employeeData: Employee,
+        context: Context?
+    ) {
+        EmployeeDatabase.getInstance(context!!)?.getEmployeeDao()!!.update(employeeData)
+    }
 }

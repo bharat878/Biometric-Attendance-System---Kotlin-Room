@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.crud.CrudFragment">
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/update"
+        android:layout_width="223dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/button_ig"
+        android:text="@string/update"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/delete"
+        android:layout_width="223dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/button_ig"
+        android:text="@string/delete"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/update"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/update"
+        app:layout_constraintTop_toBottomOf="@+id/update" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addAttendance"
+        android:layout_width="223dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/button_ig"
+        android:text="@string/add_attendance"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/delete"
+        app:layout_constraintStart_toStartOf="@+id/delete"
+        app:layout_constraintTop_toBottomOf="@+id/delete" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/deleteAttendance"
+        android:layout_width="223dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/button_ig"
+        android:text="@string/delete_attendance"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/addAttendance"
+        app:layout_constraintStart_toStartOf="@+id/addAttendance"
+        app:layout_constraintTop_toBottomOf="@+id/addAttendance" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

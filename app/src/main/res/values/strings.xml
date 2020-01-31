@@ -20,5 +20,11 @@
     <string name="submit">Register</string>
     <string name="scan">Scan Fingerprint</string>
     <string name="saved_high_score_default_key">000</string>
+    <string name="update">update</string>
+    <string name="delete">delete</string>
+    <string name="add_attendance">Add Attendance</string>
+    <string name="delete_attendance">Delete Attendance</string>
+    <string name="date">Date</string>
+    <string name="attendance">Attendance</string>
 
 </resources>

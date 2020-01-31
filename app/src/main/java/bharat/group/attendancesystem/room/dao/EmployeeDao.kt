@@ -22,6 +22,9 @@ interface EmployeeDao {
     @Query("SELECT employee_password FROM attendance_table Where employee_code = :employee")
     fun selectCredentials(employee: String):String
 
+    @Query("SELECT * FROM attendance_table WHERE employee_code = :empCode")
+    fun selectRow(empCode: String):Employee
+
     @Query("SELECT * FROM attendance_table ORDER BY employee_code DESC")
     fun getAllEmployees(): List<Employee>
 }

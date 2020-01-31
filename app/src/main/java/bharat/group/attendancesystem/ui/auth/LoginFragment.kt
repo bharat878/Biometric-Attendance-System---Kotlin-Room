@@ -18,6 +18,7 @@ import bharat.group.attendancesystem.room.DBHelperI
 import bharat.group.attendancesystem.room.database.EmployeeDatabase
 import bharat.group.attendancesystem.room.entity.Employee
 import bharat.group.attendancesystem.ui.AttendanceActivity
+import bharat.group.attendancesystem.ui.crud.CrudActivity
 import kotlinx.android.synthetic.main.fragment_login.view.*
 import java.util.concurrent.Executors
 
@@ -44,7 +45,6 @@ class LoginFragment : Fragment() {
         return mView
     }
 
-
     private fun init() {
         dbHelperI = DBHelper(EmployeeDatabase.getInstance(context!!)!!)
     }
@@ -66,7 +66,7 @@ class LoginFragment : Fragment() {
                     super.onAuthenticationSucceeded(result)
                     activity!!.runOnUiThread {
                         context!!.showToast("Authentication Successful")
-                        context!!.startActivity(Intent(context, AttendanceActivity::class.java))
+                        context!!.startActivity(Intent(context, CrudActivity::class.java))
                     }
                 }
 
@@ -80,7 +80,7 @@ class LoginFragment : Fragment() {
         promptInfo = BiometricPrompt.PromptInfo.Builder()
             .setTitle(LoginFragment.TITLE)
             .setSubtitle(LoginFragment.SUBTITLE)
-            .setDescription(LoginFragment.DISCRIPTION)
+            .setDescription(LoginFragment.DESCRIPTION)
             .setNegativeButtonText(LoginFragment.CANCEL)
             .build()
     }
@@ -90,7 +90,7 @@ class LoginFragment : Fragment() {
 
         mView.btnScan.setOnClickListener {
 
-            val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+            val sharedPref = activity?.getSharedPreferences("AttendanceSystem",Context.MODE_PRIVATE)
             val defaultValue:String = resources.getString(R.string.saved_high_score_default_key)
             val emp_code: String? = sharedPref!!.getString(getString(R.string.employee_code), defaultValue)
 
@@ -141,7 +141,7 @@ class LoginFragment : Fragment() {
         val password:String = dbHelperI.selectEmployeePassword(context,employeeData.employee_code)
 
         if (employeeData.employee_password == password){
-            context!!.startActivity(Intent(context, AttendanceActivity::class.java))
+            context!!.startActivity(Intent(context, CrudActivity::class.java))
         }else{
             context!!.showToast("wrong credentials")
         }
@@ -167,7 +167,7 @@ class LoginFragment : Fragment() {
     companion object{
         private const val TITLE : String = "Authenticate Finger"
         private const val SUBTITLE : String = ""
-        private const val DISCRIPTION : String = ""
+        private const val DESCRIPTION : String = ""
         private const val CANCEL : String = "Cancel"
     }
 }
