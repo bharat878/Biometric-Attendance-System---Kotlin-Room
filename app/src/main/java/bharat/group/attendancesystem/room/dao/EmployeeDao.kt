@@ -32,4 +32,7 @@ interface EmployeeDao {
     @Query("SELECT * FROM EmployeeAttendance_table")
     fun getAllEmployees(): List<EmployeeAttendance>
 
+    @Query("SELECT * FROM attendance_table")
+    fun getEmployeeDetails():List<Employee>
+
 }

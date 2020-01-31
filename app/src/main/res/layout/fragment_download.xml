@@ -3,8 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.crud.DownloadFragment">
 
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/csvFormat"
+        android:layout_width="223dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/button_ig"
+        android:text="@string/csvFormat"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/txtFormat"
+        android:layout_width="223dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/button_ig"
+        android:text="@string/text"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/csvFormat"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/csvFormat"
+        app:layout_constraintTop_toBottomOf="@+id/csvFormat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

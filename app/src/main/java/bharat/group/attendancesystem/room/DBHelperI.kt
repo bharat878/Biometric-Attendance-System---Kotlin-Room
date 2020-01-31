@@ -31,4 +31,6 @@ interface DBHelperI {
     fun insertEmployeeAttendance(employeeAttendance: EmployeeAttendance, context: Context?)
 
     fun selectEmployeeAttendance(context: Context?):List<EmployeeAttendance>
+
+    fun selectEmployees(context: Context?):List<Employee>
 }

@@ -54,4 +54,9 @@ class DBHelper(var employeeDatabse:EmployeeDatabase):DBHelperI {
         return attendance
     }
 
+    override fun selectEmployees(context: Context?): List<Employee> {
+        val employee:List<Employee> = EmployeeDatabase.getInstance(context!!)?.getEmployeeDao()!!.getEmployeeDetails()
+        return employee
+    }
+
 }

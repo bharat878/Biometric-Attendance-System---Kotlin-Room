@@ -27,5 +27,7 @@
     <string name="date">Date</string>
     <string name="attendance">Attendance</string>
     <string name="downloadData">Download Data</string>
+    <string name="csvFormat">csv</string>
+    <string name="text">text</string>
 
 </resources>
