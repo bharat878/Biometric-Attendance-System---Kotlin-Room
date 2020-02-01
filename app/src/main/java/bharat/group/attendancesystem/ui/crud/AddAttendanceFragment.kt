@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.DatePicker
 
 import bharat.group.attendancesystem.R
+import bharat.group.attendancesystem.extension.gotoFrag
 import bharat.group.attendancesystem.extension.showToast
 import bharat.group.attendancesystem.room.DBHelper
 import bharat.group.attendancesystem.room.DBHelperI
@@ -94,6 +95,10 @@ class AddAttendanceFragment : Fragment(), DatePickerDialog.OnDateSetListener {
     private fun saveToDatabase(employeeAttendance: EmployeeAttendance) {
         dbHelperI.insertEmployeeAttendance(employeeAttendance, context)
         context!!.showToast("saved attendance")
+        goBack()
     }
 
+    private fun goBack() {
+        context!!.gotoFrag(activity!!)
+    }
 }

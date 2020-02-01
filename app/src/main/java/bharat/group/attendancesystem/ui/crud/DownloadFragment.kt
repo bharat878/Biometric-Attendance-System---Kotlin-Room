@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import bharat.group.attendancesystem.R
+import bharat.group.attendancesystem.extension.gotoFrag
 import bharat.group.attendancesystem.extension.showToast
 import bharat.group.attendancesystem.room.DBHelper
 import bharat.group.attendancesystem.room.DBHelperI
@@ -59,14 +60,16 @@ class DownloadFragment : Fragment() {
 
         mView.csvFormat.setOnClickListener {
             readEmployeeAttendance(csvFIle)
-            context!!.showToast("downloaded")
+//            context!!.showToast("downloaded")
+//            goBack()
         }
 
         mView.txtFormat.setOnClickListener {
             readEmployeeAttendance(txt)
-            context!!.showToast("downloaded")
+
         }
     }
+
 
     private fun readEmployeeAttendance(file: File) {
         val attendance:List<EmployeeAttendance> = dbHelperI.selectEmployeeAttendance(context)
@@ -104,7 +107,13 @@ class DownloadFragment : Fragment() {
 
         writer.flush()
         writer.close()
+
+        context!!.showToast("downloaded")
+        goBack()
     }
 
+    private fun goBack() {
+        context!!.gotoFrag(activity!!)
+    }
 
 }

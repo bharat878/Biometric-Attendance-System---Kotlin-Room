@@ -17,7 +17,6 @@ import bharat.group.attendancesystem.room.DBHelper
 import bharat.group.attendancesystem.room.DBHelperI
 import bharat.group.attendancesystem.room.database.EmployeeDatabase
 import bharat.group.attendancesystem.room.entity.Employee
-import bharat.group.attendancesystem.ui.AttendanceActivity
 import bharat.group.attendancesystem.ui.crud.CrudActivity
 import kotlinx.android.synthetic.main.fragment_login.view.*
 import java.util.concurrent.Executors

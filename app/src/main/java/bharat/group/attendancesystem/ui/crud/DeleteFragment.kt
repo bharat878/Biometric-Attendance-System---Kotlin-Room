@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import bharat.group.attendancesystem.R
+import bharat.group.attendancesystem.extension.gotoFrag
 import bharat.group.attendancesystem.extension.showToast
 import bharat.group.attendancesystem.room.DBHelper
 import bharat.group.attendancesystem.room.DBHelperI
@@ -51,6 +52,12 @@ class DeleteFragment : Fragment() {
 
     private fun getEmpCode() {
 
+        if (edEmpCode.text.toString().isEmpty()){
+            edEmpCode.error = "Employee code"
+            edEmpCode.requestFocus()
+            return
+        }
+
         val employee:Employee = dbHelperI.selectEmployeeDetails(context, edEmpCode.text.toString())
         emp_id = employee.id!!
 
@@ -63,6 +70,11 @@ class DeleteFragment : Fragment() {
 
     private fun getEmpCodeForAttendance() {
 
+        if (edEmpAttendanceCode.text.toString().isEmpty()){
+            edEmpAttendanceCode.error = "Employee code"
+            edEmpAttendanceCode.requestFocus()
+            return
+        }
         val employee: EmployeeAttendance = dbHelperI.selectAttendanceDetails(context, edEmpAttendanceCode.text.toString())
         emp_id = employee.id!!
 
@@ -76,12 +88,16 @@ class DeleteFragment : Fragment() {
     private fun deleteUser(employeeData: Employee) {
         dbHelperI.deleteAllEmployees(employeeData,context)
         context!!.showToast("user deleted")
+        goBack()
     }
-
 
     private fun deleteEmployeeAttendance(attendance: EmployeeAttendance) {
         dbHelperI.deleteAttendance(context, attendance)
         context!!.showToast("attendance deleted")
+        goBack()
     }
 
+    private fun goBack() {
+        context!!.gotoFrag(activity!!)
+    }
 }

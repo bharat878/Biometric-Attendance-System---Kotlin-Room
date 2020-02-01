@@ -12,12 +12,12 @@ import android.view.ViewGroup
 import android.widget.DatePicker
 
 import bharat.group.attendancesystem.R
+import bharat.group.attendancesystem.extension.gotoFrag
 import bharat.group.attendancesystem.extension.showToast
 import bharat.group.attendancesystem.room.DBHelper
 import bharat.group.attendancesystem.room.DBHelperI
 import bharat.group.attendancesystem.room.database.EmployeeDatabase
 import bharat.group.attendancesystem.room.entity.Employee
-import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.fragment_update.*
 import kotlinx.android.synthetic.main.fragment_update.view.*
 import java.text.SimpleDateFormat
@@ -162,6 +162,10 @@ class UpdateFragment : Fragment(), DatePickerDialog.OnDateSetListener  {
     private fun updateToDatabase(employeeData: Employee) {
         dbHelperI.updateDetails(employeeData, context)
         context!!.showToast("updated")
+
+        context!!.gotoFrag(activity!!)
+
+
     }
 
 }

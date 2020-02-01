@@ -90,35 +90,19 @@
         app:layout_constraintVertical_bias="0.297" />
 
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/forgotPassword"
-        android:layout_width="150dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/forgot_password"
-        android:textColor="#2A9C92"
-        android:textSize="18sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/btnSignUp"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignUp" />
-
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnScan"
         android:layout_width="223dp"
         android:layout_height="63dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="76dp"
         android:background="@drawable/button_ig"
         android:stateListAnimator="@null"
-        android:text="scan"
+        android:text="@string/scanfingerprint"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgotPassword"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignUp"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
