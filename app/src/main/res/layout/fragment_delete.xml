@@ -9,8 +9,8 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edEmpAttendanceCode"
-        android:layout_width="217dp"
-        android:layout_height="31dp"
+        android:layout_width="182dp"
+        android:layout_height="30dp"
         android:layout_marginTop="56dp"
         android:background="@drawable/signup"
         android:hint="@string/employee_code"
@@ -24,10 +24,10 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edEmpCode"
-        android:layout_width="217dp"
-        android:layout_height="31dp"
+        android:layout_width="182dp"
+        android:layout_height="30dp"
         android:layout_marginStart="112dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="108dp"
         android:background="@drawable/signup"
         android:hint="@string/employee_code"
         android:paddingLeft="8dp"
@@ -40,8 +40,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/deleteEmployee"
-        android:layout_width="204dp"
-        android:layout_height="43dp"
+        android:layout_width="162dp"
+        android:layout_height="34dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/button_ig"
         android:text="@string/deleteAllUSers"
@@ -54,8 +54,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/deleteAttendance"
-        android:layout_width="220dp"
-        android:layout_height="46dp"
+        android:layout_width="162dp"
+        android:layout_height="34dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/button_ig"
         android:text="@string/deleteAllAttendance"

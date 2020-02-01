@@ -9,7 +9,7 @@
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/employeeCodeAttendance"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="16dp"
@@ -27,7 +27,7 @@
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/employeeNameAttendance"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -46,14 +46,13 @@
 
         android:id="@+id/employeeDateAttendance"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/signup"
         android:hint="@string/date"
         android:popupBackground="#BFFFF3"
-        android:paddingTop="8dp"
         android:paddingLeft="8dp"
         android:textColor="#000000"
         android:textSize="20sp"
@@ -66,7 +65,7 @@
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/employeePresentAttendance"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
@@ -83,8 +82,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/submitAttendance"
-        android:layout_width="223dp"
-        android:layout_height="63dp"
+        android:layout_width="182dp"
+        android:layout_height="44dp"
         android:background="@drawable/button_ig"
         android:text="@string/submit"
         android:textAlignment="center"
@@ -95,17 +94,6 @@
         app:layout_constraintTop_toBottomOf="@+id/employeePresentAttendance"
         app:layout_constraintVertical_bias="0.161" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="73dp"
-        android:layout_height="84dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.241" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

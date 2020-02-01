@@ -9,8 +9,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/csvFormat"
-        android:layout_width="223dp"
-        android:layout_height="63dp"
+        android:layout_width="182dp"
+        android:layout_height="44dp"
         android:layout_marginTop="84dp"
         android:background="@drawable/button_ig"
         android:text="@string/csvFormat"
@@ -23,8 +23,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/txtFormat"
-        android:layout_width="223dp"
-        android:layout_height="63dp"
+        android:layout_width="182dp"
+        android:layout_height="44dp"
         android:layout_marginTop="76dp"
         android:background="@drawable/button_ig"
         android:text="@string/text"
