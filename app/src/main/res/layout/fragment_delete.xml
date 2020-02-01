@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.crud.DeleteFragment">
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edEmpAttendanceCode"
+        android:layout_width="217dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/signup"
+        android:hint="@string/employee_code"
+        android:paddingLeft="8dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/deleteEmployee"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/deleteEmployee"
+        app:layout_constraintTop_toBottomOf="@+id/deleteEmployee" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edEmpCode"
+        android:layout_width="217dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="104dp"
+        android:background="@drawable/signup"
+        android:hint="@string/employee_code"
+        android:paddingLeft="8dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/deleteEmployee"
+        android:layout_width="204dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button_ig"
+        android:text="@string/deleteAllUSers"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/edEmpCode"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edEmpCode"
+        app:layout_constraintTop_toBottomOf="@+id/edEmpCode" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/deleteAttendance"
+        android:layout_width="220dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button_ig"
+        android:text="@string/deleteAllAttendance"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/edEmpAttendanceCode"
+        app:layout_constraintStart_toStartOf="@+id/edEmpAttendanceCode"
+        app:layout_constraintTop_toBottomOf="@+id/edEmpAttendanceCode" />
+</androidx.constraintlayout.widget.ConstraintLayout>

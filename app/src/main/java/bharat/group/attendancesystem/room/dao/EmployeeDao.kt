@@ -20,6 +20,9 @@ interface EmployeeDao {
     @Delete
     fun delete(employee: Employee)
 
+    @Delete
+    fun deleteAttendance(attendance: EmployeeAttendance)
+
     @Query("SELECT fingerprint_scan FROM attendance_table where employee_code = :empCode")
     fun selectFingerPrintValue(empCode:String):Boolean
 
@@ -34,5 +37,8 @@ interface EmployeeDao {
 
     @Query("SELECT * FROM attendance_table")
     fun getEmployeeDetails():List<Employee>
+
+    @Query("SELECT * FROM EmployeeAttendance_table WHERE employee_code = :empCode")
+    fun getAttendanceDetails(empCode: String):EmployeeAttendance
 
 }

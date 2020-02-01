@@ -23,6 +23,9 @@ interface DBHelperI {
 
     fun selectEmployeeDetails(context: Context?, empCode: String):Employee
 
+    fun selectAttendanceDetails(context: Context?, empCode: String):EmployeeAttendance
+
+
     fun updateDetails(
         employeeData: Employee,
         context: Context?
@@ -33,4 +36,13 @@ interface DBHelperI {
     fun selectEmployeeAttendance(context: Context?):List<EmployeeAttendance>
 
     fun selectEmployees(context: Context?):List<Employee>
+
+    fun deleteAllEmployees(
+        context: Employee,
+        context1: Context?
+    )
+
+    fun deleteAttendance(
+        context: Context?,
+        attendance: EmployeeAttendance)
 }

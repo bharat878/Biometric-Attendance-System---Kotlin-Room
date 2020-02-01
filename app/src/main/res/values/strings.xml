@@ -29,5 +29,7 @@
     <string name="downloadData">Download Data</string>
     <string name="csvFormat">csv</string>
     <string name="text">text</string>
+    <string name="deleteAllUSers">Delete Users</string>
+    <string name="deleteAllAttendance">Delete  Attendance</string>
 
 </resources>

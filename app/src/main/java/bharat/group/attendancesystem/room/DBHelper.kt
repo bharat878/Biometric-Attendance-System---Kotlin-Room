@@ -31,6 +31,11 @@ class DBHelper(var employeeDatabse:EmployeeDatabase):DBHelperI {
         return employee
     }
 
+    override fun selectAttendanceDetails(context: Context?, empCode: String): EmployeeAttendance {
+        val attendance:EmployeeAttendance = EmployeeDatabase.getInstance(context!!)?.getEmployeeDao()!!.getAttendanceDetails(empCode)
+        return attendance
+    }
+
     override fun updateDetails(
         employeeData: Employee,
         context: Context?
@@ -57,6 +62,18 @@ class DBHelper(var employeeDatabse:EmployeeDatabase):DBHelperI {
     override fun selectEmployees(context: Context?): List<Employee> {
         val employee:List<Employee> = EmployeeDatabase.getInstance(context!!)?.getEmployeeDao()!!.getEmployeeDetails()
         return employee
+    }
+
+    override fun deleteAllEmployees(
+        employeeData: Employee,
+        context: Context?
+    ) {
+        EmployeeDatabase.getInstance(context!!)?.getEmployeeDao()!!.delete(employeeData)
+    }
+
+    override fun deleteAttendance(context: Context?, attendance: EmployeeAttendance) {
+        EmployeeDatabase.getInstance(context!!)?.getEmployeeDao()!!.deleteAttendance(attendance)
+
     }
 
 }
